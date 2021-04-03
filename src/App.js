@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import 'h8k-components';
 import KanbanBoard from './components/kanban-board/index.js';
+import { StoreProvider } from './store/store';
 
 const title = "Kanban Board";
 
@@ -10,7 +11,9 @@ class App extends Component {
     return (
       <div>
         <h8k-navbar header={title}></h8k-navbar>
-        <KanbanBoard/>
+        <StoreProvider>
+          <KanbanBoard/>
+        </StoreProvider>
       </div>
     );
   }
