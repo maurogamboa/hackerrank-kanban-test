@@ -21,6 +21,7 @@ const KanbanTask = ({task, onDelete, onMove}) => {
           className="icon-only x-small mx-2" 
           data-testid={`${task.name.split(' ').join('-')}-back`}
           onClick={onClickMove('left')}  
+          disabled={!task.moveLeft}
         >
           <i className="material-icons">arrow_back</i>
         </button>
@@ -28,6 +29,7 @@ const KanbanTask = ({task, onDelete, onMove}) => {
           className="icon-only x-small mx-2" 
           data-testid={`${task.name.split(' ').join('-')}-forward`}
           onClick={onClickMove('right')} 
+          disabled={!task.moveRight}
         >
           <i className="material-icons">arrow_forward</i>
         </button>

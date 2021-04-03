@@ -9,8 +9,8 @@ const boardInitial = {
     {
       stageName: "Backlog",
       tasks: [
-        { name: '1', moveLeft: false, moveRight: true},
-        { name: '2', moveLeft: false, moveRight: true},
+        { name: '1', stage: 0, moveLeft: false, moveRight: true},
+        { name: '2', stage: 0, moveLeft: false, moveRight: true},
       ]
     },
     {

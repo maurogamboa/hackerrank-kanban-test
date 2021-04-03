@@ -1,8 +1,9 @@
 import React from 'react';
-
-
+import { addTask } from '../../store/actions';
+import { useStore } from '../../store/store';
 
 const KanbanAddInput = ({onSubmit}) =>  {
+  const [, dispatch]  = useStore();
   const [inputValue, setInputValue] = React.useState("");
 
   const onChangeHandler = (event) => {
@@ -10,7 +11,13 @@ const KanbanAddInput = ({onSubmit}) =>  {
   }
 
   const onSubmitClick = () => {
-    if(onSubmit) onSubmit(inputValue);
+    if(inputValue) {
+      const newTask = {
+        stageId: 0,
+        task: inputValue, 
+      }
+      dispatch(addTask(newTask));
+    }
     setInputValue("");
   }
 

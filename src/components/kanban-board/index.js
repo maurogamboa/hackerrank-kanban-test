@@ -3,32 +3,24 @@ import "./index.css";
 import KanbanTask from "../kanban-task/index"
 import KanbanAddInput from "../bankan-add-input/index"
 import { useStore } from '../../store/store';
-import { addTask } from '../../store/actions';
+import { deleteTask, moveTask } from '../../store/actions';
 
 const KanbanBoard = () => {
   const [ {board}, dispatch]  = useStore();
 
-  const onSubmitNewTask = ((taskName) => {
-    console.log("onSubmitNewTask", taskName);
-    const newTask = {
-      stageId: 0,
-      task: taskName, 
-    }
-    dispatch(addTask(newTask));
-  })
-
   const onDeleteTask = (stageId) => (task) => {
-    console.log(stageId, task);
+    dispatch(deleteTask({stageId, task}));
   }
 
   const onMoveTask = (stageId) => (task, direction) => {
-    console.log(stageId, task, direction);
+    const destStageId = direction === 'left' ? stageId - 1 : stageId + 1;
+    dispatch(moveTask({stageId, task, destStageId}));
   }
 
   return (
     <div className="mt-20 layout-column justify-content-center align-items-center">
       <section className="mt-50 layout-row align-items-center justify-content-center">
-        <KanbanAddInput onSubmit={onSubmitNewTask} />
+        <KanbanAddInput  />
       </section>
 
       <div className="mt-50 layout-row">
