@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
+import KanbanTask from "../kanban-task/index"
 
 export default class KanbanBoard extends Component {
   constructor() {
@@ -43,20 +44,7 @@ export default class KanbanBoard extends Component {
                             <ul className="styled mt-50" data-testid={`stage-${i}`}>
                                 {tasks.map((task, index) => {
                                     return <li className="slide-up-fade-in" key={`${i}${index}`}>
-                                      <div className="li-content layout-row justify-content-between align-items-center">
-                                        <span data-testid={`${task.name.split(' ').join('-')}-name`}>{task.name}</span>
-                                        <div className="icons">
-                                          <button className="icon-only x-small mx-2" data-testid={`${task.name.split(' ').join('-')}-back`}>
-                                            <i className="material-icons">arrow_back</i>
-                                          </button>
-                                          <button className="icon-only x-small mx-2" data-testid={`${task.name.split(' ').join('-')}-forward`}>
-                                            <i className="material-icons">arrow_forward</i>
-                                          </button>
-                                          <button className="icon-only danger x-small mx-2" data-testid={`${task.name.split(' ').join('-')}-delete`}>
-                                            <i className="material-icons">delete</i>
-                                          </button>
-                                        </div>
-                                      </div>
+                                      <KanbanTask task={task}/>
                                     </li>
                                 })}
                             </ul>
