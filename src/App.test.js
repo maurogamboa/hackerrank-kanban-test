@@ -61,7 +61,7 @@ test('For a task in stage 0, backward icon is disabled and forward icon is enabl
 	const createTaskButton = getByTestId(testIds.createTaskButton);
 	const backlogStage = getByTestId(testIds.stages[0]);
 
-	const taskName = 'task 1';
+	const taskName = 'task 2-1';
 	const taskId = `${taskName.split(' ').join('-')}-name`;
 	const taskBackIconId = `${taskName.split(' ').join('-')}-back`;
 	const taskForwardIconId = `${taskName.split(' ').join('-')}-forward`;
@@ -88,7 +88,7 @@ test('For a task in stage 0, can be moved forward till stage 4 and check for ico
 	const onGoingStage = getByTestId(testIds.stages[2]);
 	const doneStage = getByTestId(testIds.stages[3]);
 
-	const taskName = 'task 1';
+	const taskName = 'task 3-1';
 	const taskId = `${taskName.split(' ').join('-')}-name`;
 	const taskBackIconId = `${taskName.split(' ').join('-')}-back`;
 	const taskForwardIconId = `${taskName.split(' ').join('-')}-forward`;
@@ -148,7 +148,7 @@ test('For a task in stage 4, can be moved backward till stage 0 and check for ic
 	const onGoingStage = getByTestId(testIds.stages[2]);
 	const doneStage = getByTestId(testIds.stages[3]);
 
-	const taskName = 'task 1';
+	const taskName = 'task 4-1';
 	const taskId = `${taskName.split(' ').join('-')}-name`;
 	const taskBackIconId = `${taskName.split(' ').join('-')}-back`;
 	const taskForwardIconId = `${taskName.split(' ').join('-')}-forward`;
@@ -197,7 +197,7 @@ test('Clicking on delete should delete the task in stage 0', () => {
 	const createTaskButton = getByTestId(testIds.createTaskButton);
 	const backlogStage = getByTestId(testIds.stages[0]);
 
-	const taskName = 'task 1';
+	const taskName = 'task 5-1';
 	const taskId = `${taskName.split(' ').join('-')}-name`;
 	const taskDeleteIconId = `${taskName.split(' ').join('-')}-delete`;
 
@@ -222,7 +222,7 @@ test('Clicking on delete should delete the task in stage 1', () => {
 	const createTaskButton = getByTestId(testIds.createTaskButton);
 	const toDoStage = getByTestId(testIds.stages[1]);
 
-	const taskName = 'task 1';
+	const taskName = 'task 6-1';
 	const taskId = `${taskName.split(' ').join('-')}-name`;
 	const taskDeleteIconId = `${taskName.split(' ').join('-')}-delete`;
 	const taskForwardIconId = `${taskName.split(' ').join('-')}-forward`;
@@ -249,7 +249,7 @@ test('Clicking on delete should delete the task in stage 2', () => {
 	const createTaskButton = getByTestId(testIds.createTaskButton);
 	const activeStage = getByTestId(testIds.stages[2]);
 
-	const taskName = 'task 1';
+	const taskName = 'task 7-1';
 	const taskId = `${taskName.split(' ').join('-')}-name`;
 	const taskDeleteIconId = `${taskName.split(' ').join('-')}-delete`;
 	const taskForwardIconId = `${taskName.split(' ').join('-')}-forward`;
@@ -277,7 +277,7 @@ test('Clicking on delete should delete the task in stage 3', () => {
 	const createTaskButton = getByTestId(testIds.createTaskButton);
 	const doneStage = getByTestId(testIds.stages[3]);
 
-	const taskName = 'task 1';
+	const taskName = 'task 8-1';
 	const taskId = `${taskName.split(' ').join('-')}-name`;
 	const taskDeleteIconId = `${taskName.split(' ').join('-')}-delete`;
 	const taskForwardIconId = `${taskName.split(' ').join('-')}-forward`;
@@ -315,77 +315,77 @@ test('after many forward and back operations, tasks are in correct state', () =>
 	const doneInitialLength = doneStage.children.length;
 	
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 1' }
+		target: { value: 'task 9-1' }
 	});
 	fireEvent.click(createTaskButton);
 
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 2' }
+		target: { value: 'task 9-2' }
 	});
 	fireEvent.click(createTaskButton);
 
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 3' }
+		target: { value: 'task 9-3' }
 	});
 	fireEvent.click(createTaskButton);
-	fireEvent.click(getByTestId(`task-3-forward`))
+	fireEvent.click(getByTestId(`task-9-3-forward`))
 
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 4' }
+		target: { value: 'task 9-4' }
 	});
 	fireEvent.click(createTaskButton);
-	fireEvent.click(getByTestId(`task-4-forward`))
+	fireEvent.click(getByTestId(`task-9-4-forward`))
 
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 5' }
+		target: { value: 'task 9-5' }
 	});
 	fireEvent.click(createTaskButton);
-	fireEvent.click(getByTestId(`task-5-forward`));
-	fireEvent.click(getByTestId(`task-5-forward`))
+	fireEvent.click(getByTestId(`task-9-5-forward`));
+	fireEvent.click(getByTestId(`task-9-5-forward`))
 
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 6' }
+		target: { value: 'task 9-6' }
 	});
 	fireEvent.click(createTaskButton);
-	fireEvent.click(getByTestId(`task-6-forward`));
-	fireEvent.click(getByTestId(`task-6-forward`))
+	fireEvent.click(getByTestId(`task-9-6-forward`));
+	fireEvent.click(getByTestId(`task-9-6-forward`))
 
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 7' }
+		target: { value: 'task 9-7' }
 	});
 	fireEvent.click(createTaskButton);
-	fireEvent.click(getByTestId(`task-7-forward`));
-	fireEvent.click(getByTestId(`task-7-forward`));
-	fireEvent.click(getByTestId(`task-7-forward`))
+	fireEvent.click(getByTestId(`task-9-7-forward`));
+	fireEvent.click(getByTestId(`task-9-7-forward`));
+	fireEvent.click(getByTestId(`task-9-7-forward`))
 
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 8' }
+		target: { value: 'task 9-8' }
 	});
 	fireEvent.click(createTaskButton);
-	fireEvent.click(getByTestId(`task-8-forward`));
-	fireEvent.click(getByTestId(`task-8-forward`));
-	fireEvent.click(getByTestId(`task-8-forward`))
+	fireEvent.click(getByTestId(`task-9-8-forward`));
+	fireEvent.click(getByTestId(`task-9-8-forward`));
+	fireEvent.click(getByTestId(`task-9-8-forward`))
 	
 	expect(backlogStage.children.length).toBe(backlogInitialLength + 2);
-	expect(backlogStage.contains(getByTestId('task-1-name'))).toEqual(true);
-	expect(backlogStage.contains(getByTestId('task-2-name'))).toEqual(true);
-	expect(getByTestId('task-1-name').innerHTML).toBe('task 1');
-	expect(getByTestId('task-2-name').innerHTML).toBe('task 2');
+	expect(backlogStage.contains(getByTestId('task-9-1-name'))).toEqual(true);
+	expect(backlogStage.contains(getByTestId('task-9-2-name'))).toEqual(true);
+	expect(getByTestId('task-9-1-name').innerHTML).toBe('task 9-1');
+	expect(getByTestId('task-9-2-name').innerHTML).toBe('task 9-2');
 	expect(toDoStage.children.length).toBe(todoInitialLength + 2);
-	expect(toDoStage.contains(getByTestId('task-3-name'))).toEqual(true);
-	expect(toDoStage.contains(getByTestId('task-4-name'))).toEqual(true);
-	expect(getByTestId('task-3-name').innerHTML).toBe('task 3');
-	expect(getByTestId('task-4-name').innerHTML).toBe('task 4');
+	expect(toDoStage.contains(getByTestId('task-9-3-name'))).toEqual(true);
+	expect(toDoStage.contains(getByTestId('task-9-4-name'))).toEqual(true);
+	expect(getByTestId('task-9-3-name').innerHTML).toBe('task 9-3');
+	expect(getByTestId('task-9-4-name').innerHTML).toBe('task 9-4');
 	expect(onGoingStage.children.length).toBe(onGoingInitialLength + 2);
-	expect(onGoingStage.contains(getByTestId('task-5-name'))).toEqual(true);
-	expect(onGoingStage.contains(getByTestId('task-6-name'))).toEqual(true);
-	expect(getByTestId('task-5-name').innerHTML).toBe('task 5');
-	expect(getByTestId('task-6-name').innerHTML).toBe('task 6');
+	expect(onGoingStage.contains(getByTestId('task-9-5-name'))).toEqual(true);
+	expect(onGoingStage.contains(getByTestId('task-9-6-name'))).toEqual(true);
+	expect(getByTestId('task-9-5-name').innerHTML).toBe('task 9-5');
+	expect(getByTestId('task-9-6-name').innerHTML).toBe('task 9-6');
 	expect(doneStage.children.length).toBe(doneInitialLength + 2);
-	expect(doneStage.contains(getByTestId('task-7-name'))).toEqual(true);
-	expect(doneStage.contains(getByTestId('task-8-name'))).toEqual(true);
-	expect(getByTestId('task-7-name').innerHTML).toBe('task 7');
-	expect(getByTestId('task-8-name').innerHTML).toBe('task 8');
+	expect(doneStage.contains(getByTestId('task-9-7-name'))).toEqual(true);
+	expect(doneStage.contains(getByTestId('task-9-8-name'))).toEqual(true);
+	expect(getByTestId('task-9-7-name').innerHTML).toBe('task 9-7');
+	expect(getByTestId('task-9-8-name').innerHTML).toBe('task 9-8');
 });
 
 test('tasks are in correct state after multiple move and deletions', () => {
@@ -402,30 +402,30 @@ test('tasks are in correct state after multiple move and deletions', () => {
     const onGoingInitialLength = onGoingStage.children.length;
 	
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 1' }
+		target: { value: 'task 10-1' }
 	});
 	fireEvent.click(createTaskButton);
 
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 2' }
+		target: { value: 'task 10-2' }
 	});
 	fireEvent.click(createTaskButton);
 
-	fireEvent.click(getByTestId(`task-1-forward`));
-	fireEvent.click(getByTestId(`task-2-forward`));
-	fireEvent.click(getByTestId(`task-2-forward`));
-	fireEvent.click(getByTestId(`task-1-delete`))
+	fireEvent.click(getByTestId(`task-10-1-forward`));
+	fireEvent.click(getByTestId(`task-10-2-forward`));
+	fireEvent.click(getByTestId(`task-10-2-forward`));
+	fireEvent.click(getByTestId(`task-10-1-delete`))
 
 	fireEvent.change(createTaskInput, {
-		target: { value: 'task 3' }
+		target: { value: 'task 10-3' }
 	});
 	fireEvent.click(createTaskButton);
 
 	expect(backlogStage.children.length).toBe(backlogInitialLength + 1);
-	expect(backlogStage.contains(getByTestId('task-3-name'))).toBe(true);
-	expect(getByTestId('task-3-name').innerHTML).toBe('task 3');
+	expect(backlogStage.contains(getByTestId('task-10-3-name'))).toBe(true);
+	expect(getByTestId('task-10-3-name').innerHTML).toBe('task 10-3');
 	
 	expect(onGoingStage.children.length).toBe(onGoingInitialLength + 1);
-    expect(onGoingStage.contains(getByTestId('task-2-name'))).toBe(true);
-    expect(getByTestId('task-2-name').innerHTML).toBe('task 2');
+    expect(onGoingStage.contains(getByTestId('task-10-2-name'))).toBe(true);
+    expect(getByTestId('task-10-2-name').innerHTML).toBe('task 10-2');
 });
